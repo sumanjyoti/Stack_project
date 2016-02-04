@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qid: MyString
+  ques: MyText
+  userid: MyString
+  viewno: 
+
+two:
+  qid: MyString
+  ques: MyText
+  userid: MyString
+  viewno: 

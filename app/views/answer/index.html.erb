@@ -1,0 +1,13 @@
+<h1>#index</h1>
+
+<% @ans.each do |a| %>
+<table class ="stripped-table">
+	<% if a.qid==6 %>
+<tr>
+  <td><%=a.id%></td>
+  <td><%=a.qid%></td>
+  <td><%=a.ans%></td>
+	</tr>
+	<%end%>
+</table>
+<%end%>

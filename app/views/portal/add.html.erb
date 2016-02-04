@@ -1,0 +1,11 @@
+<h1>Add.html</h1>
+<%= form_for :portal , url: portal_create_path do |f| %>
+  <p>
+    <%= f.label :Question %><br>
+    <%= f.text_area :ques %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
