@@ -1,15 +1,21 @@
 class AnswerController < ApplicationController
 	def create
+    if current_member
 		@a = Answer.new(answer_params)
     	@por=Portal.find_by(params[:id])
-    	#binding.pry
-       	@a.uid=current_member.email
-    	@a.qid=@por.id
-    	
-    	@a.save
+    	 #binding.pry
+       @a.uid=current_member.email
+    	 @a.qid=@por.id
+    	 @a.save
+       redirect_to portal_index_path
+     else 
+      redirect_to new_member_session_path
+    end
 	end
   
   def index
+    #binding.pry
+    @ques=Portal.find(params[:id])
     @ans=Answer.all
   end
 
@@ -19,5 +25,4 @@ class AnswerController < ApplicationController
 	def portal_params
 		params.require(:portal).permit(:ques,:viewno,:userid)
 	end
-  	
 end

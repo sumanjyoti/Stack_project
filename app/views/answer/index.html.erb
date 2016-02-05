@@ -1,13 +1,28 @@
 <h1>#index</h1>
 
+<%= form_for :answer , url: answer_create_path(@a) do |f| %>
+<h2><%= @ques.id %> <%= @ques.ques %></h2>
+
 <% @ans.each do |a| %>
 <table class ="stripped-table">
-	<% if a.qid==6 %>
+	<% if a.qid == @ques.id%>
 <tr>
-  <td><%=a.id%></td>
-  <td><%=a.qid%></td>
-  <td><%=a.ans%></td>
-	</tr>
+  <td><%= a.id%></td>
+  <td><%= a.qid%></td>
+  <td><%= a.ans%></td>
+  	</tr>
 	<%end%>
-</table>
+	</table>
+<p>	
+	<%end%>
+	
+</p>
+<p>
+    <%= f.label :Answer%><br>
+    <%= f.text_area :ans %>
+    <%= f.submit %>
+ </p>
+  
+
+
 <%end%>

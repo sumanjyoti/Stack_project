@@ -4,26 +4,22 @@
   <%=link_to "Add question",portal_add_path %>
     <div style="width :70%; float: left">
       <!--Sidebar content-->
-      <% @ques.each do |a| %>
-<table class="table table-inverse">
+<% @ques.each do |a| %>
+<table >
 <tr>
-  <td><%=a.qid%></td>
   <td><%=a.viewno%></td>
 	<td><%=a.ques%></td>
 	<td><%=a.userid%></td>
-
   <%=link_to 'Delete question',portal_delete_path(a)%>
-	<%=link_to "Answer question",portal_answer_path %>
-  <%=link_to 'View Answer',portal_viewcount_path(a) %>
+  <%=link_to 'View Answers' , portal_viewcount_path(a) %>
 </tr>
-
 </table>
 <br>
 <% end %>
 <p>Find me in app/views/portal/index.html.erb</p>
     </div>
-    <div style="width:30%; float:right;border: 10px;background-color: #108078"  >
-      <!--Body content-->
+    <div style="width:30%; float:right;border: 10px;background-color:pink"  >
+      
       side place to be done later
       who viewed who 
       Ajax

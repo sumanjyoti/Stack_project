@@ -3,19 +3,22 @@ Rails.application.routes.draw do
 
   get 'portal/add'
 
-  get 'portal/delete'
-
+  #DELETE '/photos/:id' => 'portal#delete'
+    get 'portal/delete.:id' => 'portal#delete', as: :portal_delete
+    get 'portal/viewcount.:id' => 'portal#viewcount', as: :portal_viewcount
   get 'portal/edit'
 
-  get 'portal/answer'
+  get 'portal/answer'#not used
   post 'answer/create'
-  get 'portal/viewcount'
+  #get 'portal/viewcount'
   devise_for :members
-  get 'home/index'
+  #get 'home/index'
+  get 'home/index.:id'=>'home#index', as: :home_index
   post 'portal/create'
    get 'portal/save'
    get 'portal/showans'
-   get 'answer/index'
+   get 'answer/index.:id'=>'answer#index', as: :answer_index
+   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
