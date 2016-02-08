@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203114628) do
+ActiveRecord::Schema.define(version: 20160205095824) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "qid",         limit: 255
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20160203114628) do
     t.text     "ques",       limit: 65535
     t.string   "userid",     limit: 255
     t.integer  "viewno",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "recents", force: :cascade do |t|
+    t.string   "userid",     limit: 255
+    t.text     "ques",       limit: 65535
+    t.text     "ans",        limit: 65535
+    t.text     "vques",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

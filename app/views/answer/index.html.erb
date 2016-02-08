@@ -5,13 +5,12 @@
 
 <% @ans.each do |a| %>
 <table class ="stripped-table">
-	<% if a.qid == @ques.id%>
+
 <tr>
   <td><%= a.id%></td>
   <td><%= a.qid%></td>
   <td><%= a.ans%></td>
   	</tr>
-	<%end%>
 	</table>
 <p>	
 	<%end%>

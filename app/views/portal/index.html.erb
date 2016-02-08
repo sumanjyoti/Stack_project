@@ -1,29 +1,27 @@
-<form role="form" class="form-inline">
+
 <h1>Portal#index</h1>
 <div class="container-fluid"  >
+  
   <%=link_to "Add question",portal_add_path %>
     <div style="width :70%; float: left">
-      <!--Sidebar content-->
+      
 <% @ques.each do |a| %>
-<table >
+<table BORDER CELLSPACING=2 CELLPADDING=5 ><col width="130">
+  <col width="200"><col width="130">
+  <col width="80">
 <tr>
-  <td><%=a.viewno%></td>
+  <td><%=a.viewno%> <%=link_to 'Views',portal_viewcount_path(a) %> </td>
 	<td><%=a.ques%></td>
 	<td><%=a.userid%></td>
-  <%=link_to 'Delete question',portal_delete_path(a)%>
-  <%=link_to 'View Answers' , portal_viewcount_path(a) %>
+  <td><%=link_to 'Delete question',portal_delete_path(a)%></td>
+  
 </tr>
 </table>
 <br>
 <% end %>
 <p>Find me in app/views/portal/index.html.erb</p>
     </div>
-    <div style="width:30%; float:right;border: 10px;background-color:pink"  >
-      
-      side place to be done later
-      who viewed who 
-      Ajax
+    <div id="ub" style="width:30%; float:right; border: 10px;background-color:pink">
+      <%= render partial: 'rece'  %>
     </div>
 </div>
-
-</form>

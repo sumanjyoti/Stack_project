@@ -4,8 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.string :qid
       t.string :uid
       t.text :ans
-      t.references :question, index: true, foreign_key: true
-
+      t.references :portal, index: true, foreign_key: true
       t.timestamps null: false
     end
   end

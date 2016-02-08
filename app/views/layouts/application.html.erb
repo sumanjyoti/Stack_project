@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
-    <%= stylesheet_link_tag 'application', media: 'all',
-                                           'data-turbolinks-track' => true %>
+  <head>   
+    <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body >
+    <script>
+
+$(document).ready(function() { 
+  $.ajax('/portal/recent_act');
+   setInterval(function () { 
+         $.ajax('/portal/recent_act');
+       } , 5000);          
+}); 
+    </script>
+
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container" width:500px >
         <nav>

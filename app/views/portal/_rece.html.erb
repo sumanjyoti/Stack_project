@@ -1,0 +1,9 @@
+<div>
+	<% if @rec %>
+	<% @rec.each do |re| %>
+     <table>     
+     <tr><td><%=re.userid %>&nbsp</td><td> <%= (re.ques) || (re.ans) || (re.vques) %></td></tr><br>
+     </table>
+     <%end%>
+     <% end %>
+ </div>
