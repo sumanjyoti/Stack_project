@@ -23,6 +23,7 @@ class AnswerController < ApplicationController
     #binding.pry
     @ques=Portal.find(params[:id])
     @ans=Answer.where(:qid =>@ques.id)
+    
   end
 
 	def answer_params

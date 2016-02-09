@@ -34,6 +34,10 @@ class PortalController < ApplicationController
   def delete
   #  binding.pry
     @p=Portal.find(params[:id])
+    @r=Recent.new
+    @r.userid=current_member.email
+    @r.ques=("deleted "+@p.ques)
+    @r.save
    # binding.pry
    # if @p.userid==current_member.email
     @p.delete
